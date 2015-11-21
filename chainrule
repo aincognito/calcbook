@@ -1,0 +1,237 @@
+\documentclass{ximera}
+
+\input{preamble}
+
+\outcome{Compute the derivative of a composition}
+
+\title{The Chain Rule}
+
+\begin{document}
+
+\begin{abstract}
+In this section we learn the chain rule and do several examples.
+\end{abstract}
+
+\maketitle
+
+\begin{theorem} If $f(x)$ and $g(x)$ are differentiable functions, then
+\[f(g(x))]' = f'(g(x))g'(x).\]
+\end{theorem}
+
+In words, the derivative of a composition is the derivative of the outside (with the inside in) 
+times the derivative of the inside.\\
+
+\begin{center}
+
+\bf{Examples of the Chain Rule}
+
+\end{center}
+
+\begin{question}
+  Compute
+  \[
+  \frac{d}{dx} \sin(3x^5)
+  \]
+  \begin{solution}
+    \begin{hint}
+      You will have to use the chain rule.
+    \end{hint}
+    \begin{hint}
+      The ``outside'' function is $f(x) = \sin(x)$ and the ``inside''
+      function is $g(x) = 3x^5$.
+    \end{hint}
+    \begin{hint}
+      The chain rule says:
+      \[
+      \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+      \]
+    \end{hint}
+    \begin{hint}
+      So we see that
+      \[
+      \frac{d}{dx} \sin(3x^5) = \cos(3x^5) \cdot 15 x^4
+      \]
+    \end{hint}
+    The derivative of $\sin(3x^5)$ with respect to $x$ is
+		\begin{prompt}
+\answer{$\cos(3x^5)\cdot 15x^4$}
+\end{prompt}
+    
+  \end{solution}
+\end{question}
+
+%\begin{verbatim}
+\begin{question}
+What is your favorite color?
+\begin{multipleChoice}
+\choice[correct]{Rainbow}
+\choice{Blue}
+\choice{Green}
+\choice{Red}
+\end{multipleChoice}
+\begin{feedback}
+Hello
+\end{feedback}
+\end{question}
+%\end{verbatim}
+
+
+
+\begin{question}
+ If $h(x) = \sin(2x)$ then $h(x)=f(g(x))$ with
+\[g(x) = 2x \mbox{\ \ and \ } f(x) = \sin(x).\]
+
+
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$. First,
+\[g'(x) = 2; \mbox{\ then} \]
+\[f'(x) = \cos(x), \mbox{\ so}\]
+\[f'(g(x)) =\cos(g(x)) = \cos(2x).\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) = \cos(2x) \cdot 2 = 2\cos(2x).\]
+\end{question}
+
+\begin{description}
+\item[CR 2.] If $h(x) = e^{5x}$ then $h(x)=f(g(x))$ with: 
+\[g(x) = 5x  \mbox{\ \ and \ } f(x) = e^x.\]
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$. First:
+\[g'(x) = 5; \mbox{\ then} \]
+\[f'(x) = e^x, \mbox{\ so}\]
+\[f'(g(x)) =e^{g(x)} = e^{5x}.\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) = e^{5x} \cdot 5 = 5e^{5x}.\]
+
+\item[CR 3.] If $h(x) = \cos(x^2 + 1)$ then $h(x)=f(g(x))$ with
+\[g(x) = x^2 + 1  \mbox{\ \ and \ } f(x) = \cos(x).\]
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$. First,
+\[g'(x) = 2x; \mbox{\ then} \]
+\[f'(x) = -\sin(x), \mbox{\ so}\]
+\[f'(g(x))= -\sin(g(x)) = -\sin(x^2 + 1).\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) = -\sin(x^2 + 1) \cdot 2x = -2x\sin(x^2 + 1).\]
+
+
+\item[Chain 4.] If $h(x) = (x^3 - 4x + 2)^7$ then $h(x)=f(g(x))$ with 
+\[g(x) = x^3 - 4x + 2 \mbox{\ \ and \ } f(x) = x^7.\]
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First,
+\[g'(x) =3x^2 - 4; \mbox{\ then} \]
+\[f'(x) = 7x^6 , \mbox{\ so}\]
+\[f'(g(x)) = 7[g(x)]^6 = 7(x^3 - 4x + 2)^6 .\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) = 7(x^3 + 4x + 2)^6(3x^2 - 4)=7(3x^2 - 4)(x^3 - 4x + 2)^6.\]
+
+\item[Chain 5.] If $h(x) = \sqrt{x^2 + 4}$ then $h(x)=f(g(x))$ with 
+\[g(x) = x^2 + 4 \mbox{\ \ and \ } f(x) = \sqrt x./] 
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First,
+\[g'(x) = 2x; \mbox{\ then} \]
+ \[f'(x) = \frac{1}{2\sqrt x} , \mbox{\ so}\] 
+\[f'(g(x)) = \frac{1}{2\sqrt {g(x)}}=\frac{1}{2\sqrt {x^2 + 4}}.\]
+By the chain rule,
+\begin{align*}
+h'(x) &= f'(g(x))g'(x)\\
+&= \frac{1}{2\sqrt {x^2 + 4}}\cdot 2x\\
+&= \frac{2x}{2\sqrt {x^2 + 4}}\\
+=\frac{x}{\sqrt {x^2 + 4}}.
+\end{align*}
+
+\item[Chain 6.] If $h(x) = \tan(3x)$ then $h(x)=f(g(x))$ with 
+\[g(x) = 3x \mbox{\ \ and \ } f(x) =\tan(x).\]
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First, 
+\[g'(x) =3; \mbox{\ then} \]
+\[f'(x) =\sec^2(x) , \mbox{\ so}\]
+\[f'(g(x)) = \sec^2(g(x)) = \sec^2(3x).\]
+By the chain rule, 
+\[h'(x) = f'(g(x))g'(x) = \sec^2(3x) \cdot 3= 3\sec^2(3x).\]
+
+\item[Chain 7.] If $h(x) = \frac{3}{(2x + 5)^4}$ then $h(x)=f(g(x))$ with 
+\[g(x) = 2x+ 5 \mbox{\ \ and \ } f(x) = \frac{3}{x^4} = 3x^{-4}.\]
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First,
+\[g'(x) = 2; \mbox{ \ then}\]
+\[f'(x) = -12x^{-5}, \mbox{\ so}\]
+\[f'(g(x)) = -12[g(x)]^{-5} = -12(2x+5)^{-5} = -\frac{12}{(2x+5)^5}.\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) = -\frac{12}{(2x+5)^5}\cdot 2 = -\frac{24}{(2x+5)^5}.\]
+
+
+\item[Chain 8.] If $h(x) = \sin(x^3)$ then $h(x)=f(g(x))$ with 
+\[g(x) = x^3 \mbox{\ \ and \ } f(x) = \sin(x).\] 
+To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First, 
+\[g'(x) = 3x^2; \mbox{\ then} \]
+\[f'(x) =\cos(x) , \mbox{\ so}\]
+\[ f'(g(x)) = \cos(g(x)) = \cos(x^3).\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) = \cos(x^3)\cdot 3x^2 = 3x^2\cos(x^3).\]
+
+\item[Chain 9.] If $h(x) = \sin^3(x)$ then $h(x)=f(g(x))$ with 
+\[g(x) =\sin(x)  \mbox{\ \ and \ } f(x) = x^3.\]
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First, 
+\[g'(x) =\cos(x); \mbox{\ then} \] 
+\[f'(x) = 3x^2, \mbox{\ so}\] 
+\[f'(g(x)) = 3g^2(x) = 3\sin^2(x).\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) =  3\sin^2(x)\cos(x).\]
+
+\item[Chain 10.] If $h(x) = e^{-x^2}$ then $h(x)=f(g(x))$ with 
+\[g(x) = -x^2 \mbox{\ \ and \ } f(x) =e^x.\]
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$. First, 
+\[g'(x) = -2x; \mbox{\ then} \] 
+\[f'(x) = e^x, \mbox{\ so} \]
+\[f'(g(x)) = e^{g(x)} = e^{-x^2}.\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) = e^{-x^2} (-2x)$ or $-2xe^{-x^2}.\]
+
+\item[Chain 11.] If $h(x) = \ln(x^4 +1)$ then $h(x)=f(g(x))$ with 
+\[g(x) = x^4 + 1 \mbox{\ \ and \ } f(x) = \ln(x).\]
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First, 
+\[g'(x) = 4x^3; \mbox{\ then} \] 
+\[f'(x) = \frac{1}{x}, \mbox{\ so}\]
+\[ f'(g(x)) =\frac{1}{g(x)} = \frac{1}{x^4 + 1} .\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) = \frac{1}{x^4 + 1} \cdot 4x^3 = \frac{4x^3}{x^4 + 1}.\]
+
+\item[Chain 12.] If $h(x) = \ln^5(x)$ then $h(x)=f(g(x))$ with 
+\[g(x) = \ln(x) \mbox{\ \ and \ } f(x) = x^5.\]
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First, 
+\[g'(x) = \frac{1}{x}; \mbox{\ then} \] 
+\[f'(x) = 5x^4, \mbox{\ so} \]
+\[f'(g(x)) = 5g^4(x) = 5\ln^4(x).\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) = 5\ln^4(x)\cdot \frac{1}{x}  = \frac{5\ln^4(x)}{x}.\]
+
+\item[Chain 13.] If $h(x) = \ln(\sin(x))$ then $h(x)=f(g(x))$ with 
+\[g(x) = \sin(x) \mbox{\ \ and \ } f(x) = \ln(x).\]
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First,
+\[g'(x) = \cos(x); \mbox{\ then} \]
+\[f'(x) = \frac{1}{x}, \mbox{\ so}\]
+\[f'(g(x)) = \frac{1}{g(x)} = \frac{1}{\sin(x)}.\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) = \frac{1}{\sin(x)} \cdot \cos(x) = \frac{\cos(x)}{\sin(x)} = \cot(x).\]
+
+\item[Chain 14.] If $h(x) = \tan^{-1}(4x)$ then $h(x)=f(g(x))$ with 
+\[g(x) = 4x \mbox{\ \ and \ } f(x) = \tan^{-1}(x).\]
+ To find $h'(x)$ we need $f'(g(x))$ and $g'(x)$.  First, 
+\[g'(x) = 4; \mbox{\ then} \] 
+\[f'(x) = \frac{1}{1+x^2} , \mbox{\ so}\]
+\[ f'(g(x)) = \frac{1}{1+g^2(x)} =\frac{1}{1+(4x)^2}=\frac{1}{1+16x^2}.\]
+By the chain rule,
+\[h'(x) = f'(g(x))g'(x) = \frac{1}{1+16x^2} \cdot \mbox{\footnotesize $4$} = \frac{4}{1+16x^2}.\]
+
+\item[Chain 15.] If $h(x) = x^{\sin(x)}$ then we can use the fact that the exponential and logarithm functions are inverses:
+\[e^{\ln(x)} = x\]
+and the fact that 
+\[\ln(x^n) = n\ln(x)\]
+to rewrite $h(x)$: 
+\[h(x) = x^{\sin(x)} = e^{\ln(x^{\sin(x)})} = e^{\sin(x)\ln(x)}\]
+and we can now compute $h'(x)$ using a combination of the chain rule and product rule.
+We can write $h(x)$ as a composition, $f(g(x))$ with 
+\[g(x) = \sin(x)\ln(x) \mbox{\ and \ } f(x) = e^x.\]
+Then to find $g'(x)$ we us the product rule and we get $g'(x) = \frac{\sin(x)}{x} + \cos(x)\ln(x)$.
+Next $f'(x) = e^x$ and 
+so $f'(g(x)) = e^{g(x)} = e^{\sin(x)\ln(x)} = x^{\sin(x)}$.
+We can then conclude $h'(x) = f'(g(x))g'(x) = x^{\sin(x)} \left[ \frac{\sin(x)}{x} + \cos(x)\ln(x)\right]$.
+
+
+
+
+\end{description}
+
+\end{document}
